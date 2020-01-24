@@ -27,13 +27,10 @@ export default {
   }),
   methods: {
     encode () {
-      if (this.show) {
-        this.show = false
-      }
       // eslint-disable-next-line no-debugger
       debugger
+      this.show = !this.show
       this.encoded = `https://voice2.reverso.net/RestPronunciation.svc/v1/output=json/GetVoiceStream/voiceName=Heather22k?inputText=${Base64.encode(this.text)}`
-      this.show = true
     }
   },
   created () {
