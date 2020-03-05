@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div>
-      <input type="text" v-model="text" @keyup.enter="encode">
+      <input rows="5" cols="33" type="text" ref="inputkk" v-model="text" @keyup.enter="encode" />
     </div>
     <div>
       <audio v-if="show" controls>
@@ -11,7 +11,7 @@
     </div>
     <div>
       <textarea id="story" name="story"
-        v-model="textArea" ref="inputkk" rows="5" cols="33" />
+        v-model="textArea" ref="textkk" rows="5" cols="33" />
     </div>
   </div>
 </template>
@@ -37,8 +37,9 @@ export default {
   methods: {
     encode () {
       this.textArea = ''
-      this.$refs['inputkk'].select()
+      this.$refs['textkk'].select()
       document.execCommand('copy')
+      this.$refs['inputkk'].select()
       // eslint-disable-next-line no-debugger
       this.show = !this.show
       let createTitle = this.text.split(' ')
