@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div>
-      <input ref="inputkk" type="text" v-model="text" @keyup.enter="encode">
+      <input type="text" v-model="text" @keyup.enter="encode">
     </div>
     <div>
       <audio v-if="show" controls>
@@ -11,7 +11,7 @@
     </div>
     <div>
       <textarea id="story" name="story"
-        v-model="textArea" rows="5" cols="33" />
+        v-model="textArea" ref="inputkk" rows="5" cols="33" />
     </div>
   </div>
 </template>
