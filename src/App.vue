@@ -36,6 +36,7 @@ export default {
   }),
   methods: {
     encode () {
+      console.log('&#10;')
       this.textArea = ''
       this.$refs['textkk'].select()
       document.execCommand('copy')
